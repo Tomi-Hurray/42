@@ -1,8 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/24 17:48:09 by tkorytko          #+#    #+#             */
+/*   Updated: 2025/10/04 18:41:28 by tkorytko         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
+# define LIBFT_H
 
-#define LIBFT_H
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdint.h>
 
-bool ft_isalpha(char *estr);
-bool ft_isdigit(char *estr);
+int		ft_isalpha(char estr);
+int		ft_isdigit(char estr);
+int		ft_isalnum(char estr);
+int		ft_isascii(int estr);
+int		ft_isprint(char estr);
+size_t	ft_strlen(const char *estr);	
+void	*ft_memset(void *estr, unsigned int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+int		ft_atoi(const char *nptr);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *s);
 
-#endif // LIBFT_H
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+#endif // libft
