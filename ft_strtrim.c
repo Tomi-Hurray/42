@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/04 19:52:47 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/05 15:14:30 by tkorytko         ###   ########.fr       */
+/*   Created: 2025/10/05 15:06:48 by tkorytko          #+#    #+#             */
+/*   Updated: 2025/10/05 15:45:55 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	s1_len;
-	size_t	s2_len;
-	char	*joint;
+	char	*trims;
+	size_t	i;
+	size_t	j;
 
-	if (!s1 || !s2)
+	j = 0;
+	i = 0;
+	trims = malloc(ft_strlen(s1));
+	if (!trims)
 		return (NULL);
-	s1_len = (ft_strlen(s1));
-	s2_len = (ft_strlen(s2));
-	joint = malloc(s1_len + s2_len + 1);
-	if (!joint)
-		return (NULL);
-	ft_memcpy(joint, s1, s1_len);
-	ft_memcpy(joint + s1_len, s2, s2_len);
-	joint[s1_len + s2_len] = 0;
-	return (joint);
+	while (trims[i++] != '\0')
+	{
+		while (set[j] != '\0')
+		{
+			if (trims[i] == set[j])
+			{
+				break ;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
 }
