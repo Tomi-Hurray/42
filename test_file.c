@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:21:20 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/07 12:28:59 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/08 01:35:55 by tomi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,11 @@ int main()
 	printf("strdup %s\n", ft_strdup("hello!"));
 	printf("substr %s\n", ft_substr("hello!", 4, 4200));
 	printf("strtrim %s\n", ft_strtrim("abbsiemanobbbbbb", "ab"));
+
+	char	*s = " Hello World! Wow! ";
+	char	**v = ft_split(s, ' ');
+	while (*v)
+	{
+		printf("split %s\n", *v++);
+	}
 }
