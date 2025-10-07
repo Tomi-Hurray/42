@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/05 15:06:48 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/07 02:05:42 by tomi             ###   ########.fr       */
+/*   Updated: 2025/10/07 12:30:48 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static size_t	trim_front(char *string, char const	*tset)
 {
 	size_t	start;
 	size_t	j;
-	
+
 	start = 0;
 	j = 0;
 	while (tset[j] != '\0')
@@ -51,6 +51,7 @@ static size_t	trim_back(char	*string, char const	*tset)
 	}
 	return (end + 1);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trims;
@@ -58,7 +59,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 	size_t	i;
 	char	*res;
-	
+
 	x = 0;
 	trims = malloc(ft_strlen(s1) + 1);
 	ft_memcpy(trims, s1, ft_strlen(s1));
@@ -70,7 +71,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	res = malloc(j - i + 1);
 	if (!res)
 		return (NULL);
-	while (x <= j - 1)
+	while (x < j && i <j)
 	{
 		res[x++] = trims[i++];
 	}

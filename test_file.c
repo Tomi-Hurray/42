@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:21:20 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/04 19:45:36 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/07 12:28:59 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ int main()
 	printf("calloc %p\n", ft_calloc(5, 3));
 	printf("strdup %s\n", ft_strdup("hello!"));
 	printf("substr %s\n", ft_substr("hello!", 4, 4200));
+	printf("strtrim %s\n", ft_strtrim("abbsiemanobbbbbb", "ab"));
 }
