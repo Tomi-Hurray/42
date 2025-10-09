@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:21:20 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/08 01:35:55 by tomi             ###   ########.fr       */
+/*   Updated: 2025/10/09 19:57:03 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdint.h>
+
+char addOne(unsigned int i, char c)
+{
+		return (i + c);
+}
 
 int main()
 {
@@ -68,10 +73,12 @@ int main()
 	printf("substr %s\n", ft_substr("hello!", 4, 4200));
 	printf("strtrim %s\n", ft_strtrim("abbsiemanobbbbbb", "ab"));
 
-	char	*s = " Hello World! Wow! ";
+	char	*s = " abb ";
 	char	**v = ft_split(s, ' ');
 	while (*v)
 	{
 		printf("split %s\n", *v++);
 	}
+	printf("itoa %s\n", ft_itoa(0));
+	printf("strmapi %s\n", ft_strmapi("1234", addOne));
 }
