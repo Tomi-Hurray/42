@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:21:20 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/09 19:57:03 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/11 13:51:16 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ char addOne(unsigned int i, char c)
 		return (i + c);
 }
 
+void addOne_v(unsigned int i, char *s)
+{
+		*s += i;
+}
+
 int main()
 {
 	char a;
@@ -32,6 +37,7 @@ int main()
 	char s2[] = {0, 0, 42, 0};
 	b = 126;
 	a = '\n';
+	char sus[] = "00000";
 	size_t x = 0;
 	ft_isalpha(a);
 	printf("isalpha: %d\n", ft_isalpha(a));
@@ -81,4 +87,10 @@ int main()
 	}
 	printf("itoa %s\n", ft_itoa(0));
 	printf("strmapi %s\n", ft_strmapi("1234", addOne));
+	ft_striteri(sus, &addOne_v);
+	printf("striter %s\n", sus);
+	ft_putchar_fd('d', 1);
+	ft_putstr_fd("hello!", 1);
+	ft_putendl_fd("hello!", 1);
+	ft_putnbr_fd(25, 1);
 }
