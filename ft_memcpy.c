@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 20:28:26 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/09/26 13:49:40 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 14:09:35 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t			i;
-	unsigned char	 *dst;
+	unsigned char	*dst;
 
 	dst = dest;
 	i = 0;

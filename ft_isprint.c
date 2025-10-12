@@ -6,13 +6,13 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:41:57 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/09/24 17:46:27 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 13:36:44 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char estr)
+int	ft_isprint(int c)
 {
-	if (estr >= 32 && estr <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

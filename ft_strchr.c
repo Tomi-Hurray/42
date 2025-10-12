@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 14:47:23 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/09/28 18:18:16 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 14:12:40 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	int		j;
 	char	*string;
 	char	cc;
-	
+
 	cc = c;
 	string = (char *)s;
 	j = 0;

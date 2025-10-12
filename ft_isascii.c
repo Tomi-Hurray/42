@@ -6,15 +6,15 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:41:10 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/09/24 17:46:46 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 13:35:16 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int estr)
+int	ft_isascii(int c)
 {
-	if (estr > 127 || estr < 0)
+	if (c > 127 || c < 0)
 		return (0);
 	else
 		return (1);

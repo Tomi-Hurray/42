@@ -6,13 +6,13 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:39:31 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/09/24 17:46:32 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 13:42:57 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char estr)
+int	ft_isdigit(int	c)
 {
-	if ((estr - 48) >= 0 && (estr - 48) <= 9)
+	if ((c  >= 48) && (c <= 57))
 		return (1);
 	else
 		return (0);

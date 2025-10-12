@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:48:09 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/11 13:47:51 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 13:38:49 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <unistd.h>
 # include <stdint.h>
 
-int		ft_isalpha(char estr);
-int		ft_isdigit(char estr);
-int		ft_isalnum(char estr);
-int		ft_isascii(int estr);
-int		ft_isprint(char estr);
-size_t	ft_strlen(const char *estr);	
-void	*ft_memset(void *estr, unsigned int c, size_t n);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+size_t	ft_strlen(const char *s);	
+void	*ft_memset(void *s, unsigned int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);

@@ -6,18 +6,18 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:42:50 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/02 13:54:03 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 13:38:05 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *estr)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (estr[i] != 0)
+	while (s[i] != 0)
 		i++;
 	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 19:22:36 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/02 16:42:32 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 14:11:10 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	x;
-	
+
 	x = ft_strlen(little);
 	if (*little == '\0')
 		return ((char *)big);
@@ -31,7 +31,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 				big--;
 		}
 		big++;
-		
 	}
 	return (NULL);
 }

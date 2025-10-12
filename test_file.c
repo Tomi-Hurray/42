@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:21:20 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/11 13:51:16 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/12 13:39:56 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ int main()
 	a = '\n';
 	char sus[] = "00000";
 	size_t x = 0;
-	ft_isalpha(a);
-	printf("isalpha: %d\n", ft_isalpha(a));
-	ft_isdigit(a);
-	printf("isdigit: %d\n", ft_isdigit(a));
+	ft_isalpha(5);
+	printf("isalpha: %d\n", ft_isalpha(65));
+	ft_isdigit(5);
+	printf("isdigit: %d\n", ft_isdigit(5));
 	ft_isalnum(a);
-	printf("isalnum: %d\n", ft_isalnum(a));
+	printf("isalnum: %d\n", ft_isalnum('\n'));
 	printf("isascii: %d\n", ft_isascii(b));
-	printf("isprint: %d\n", ft_isprint(a));
+	printf("isprint: %d\n", ft_isprint(' '));
 	printf("strlen: %ld\n", ft_strlen("hello!"));
 	// printf("memset: %s\n", ft_memset(&c, 56, 3));
 	// b = 4294967295;
