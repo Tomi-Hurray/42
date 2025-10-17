@@ -6,9 +6,11 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 17:41:57 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/12 13:36:44 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:48:31 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

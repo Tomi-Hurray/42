@@ -6,12 +6,11 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 15:46:52 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/12 14:13:05 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:51:15 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

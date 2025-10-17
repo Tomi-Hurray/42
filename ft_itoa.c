@@ -6,12 +6,11 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:49:56 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/09 19:19:23 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/16 17:48:00 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	memory_count(long tmp)
 {

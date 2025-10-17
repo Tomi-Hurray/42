@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/14 15:16:20 by tkorytko          #+#    #+#              #
+#    Updated: 2025/10/14 19:19:25 by tkorytko         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #compilator
 CC = cc
 
@@ -19,36 +31,41 @@ SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c  \
 		ft_split.c ft_itoa.c ft_strmapi.c \
 		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
-		ft_putendl_fd.c ft_putnbr_fd.c
+		ft_putendl_fd.c ft_putnbr_fd.c 
 
+SRC_B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+		ft_lstlast.c ft_lstadd_back.c
+		
 #lib object files
 OBJ = $(SRC:.c=.o)
 
-#testfile
-TESTSRC = test_file.c
-TESTOBJ = $(TESTSRC:.c=.o)
-TESTBIN = test
+#make bonus
+OBJ_B = $(SRC_B:.c=.o)
 
 #default rule
-all : $(NAME) test
+all : $(NAME)
 
 #building lib
 $(NAME): $(OBJ)
+	rm -f $(NAME)
 	ar rcs $(NAME) $(OBJ)
+
+#bonus
+bonus: $(OBJ) $(OBJ_B)
+	rm -f  $(NAME)
+	ar rcs $(NAME) $(OBJ) $(OBJ_B)
 
 #building files with .o ext
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-#building testfile
-test: $(NAME) $(TESTOBJ)
-	$(CC) $(CFLAGS) -o $(TESTBIN) $(TESTOBJ) $(NAME)
+
 #cleanup of .o files
 clean:
-	rm -f $(OBJ) $(TESTOBJ)
+	rm -f $(OBJ) $(OBJ_B)
 #cleanup of everyting + (library and programme)
 fclean: clean
-	rm -f $(NAME) $(TESTBIN)
+	rm -f $(NAME)
 #full cleanup and compilation
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re bonus
