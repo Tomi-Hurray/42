@@ -3,40 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 00:56:10 by tomi              #+#    #+#             */
-/*   Updated: 2025/10/19 20:05:01 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/20 23:16:22 by tomi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char	ft_parsing(const char *p, size_t num_args)
+void	ft_parsing(const char **format, va_list argus)
 {
-	size_t	i;
+	char	*str;
+	int		i;
 
 	i = 0;
-	while (i < num_args)
-	{
-		if (p[i] == 'c' && p[i + 1] == '%')
-			return ('c');
-		if (p[i] == 's' && p[i + 1] == '%')
-			return ('s');
-		if (p[i] == 'p' && p[i + 1] == '%')
-			return ('p');
-		if (p[i] == 'd' && p[i + 1] == '%')
-			return ('d');
-		if (p[i] == 'i' && p[i + 1] == '%')
-			return ('i');
-		if (p[i] == 'u' && p[i + 1] == '%')
-			return ('u');
-		if (p[i] == 'x' && p[i + 1] == '%')
-			return ('x');
-		if (p[i] == 'X' && p[i + 1] == '%')
-			return ('X');
-		if (p[i] == '%' && p[i + 1] == '%')
-			return ('%');
-		return ('S');
-	}
+	 while ((* format)[i] != '\0')
+    {
+		if ((* format)[i] == '%')
+		{
+			if ((* format)[i + 1] == 's')
+			{
+				str = va_arg(argus, char *);
+				ft_putstr_fd(str, 1);
+				i+=2;;
+			}
+		}
+		else
+		{
+			ft_putchar_fd((*format)[i], 1);
+			i++;
+		}
+    }
 }

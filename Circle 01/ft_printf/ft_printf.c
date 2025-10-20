@@ -6,45 +6,36 @@
 /*   By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 01:01:10 by tomi              #+#    #+#             */
-/*   Updated: 2025/10/18 01:56:30 by tomi             ###   ########.fr       */
+/*   Updated: 2025/10/21 00:32:22 by tomi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 #include <stdio.h>
 
-int ft_printf(const char *p, ...)
+int ft_printf(const char *format, ...)
 {
     size_t i;
-
-    i = 0;
-    size_t num_args = ft_strlen(p);
-    
+    int count;
     va_list argus;
-    va_start(argus, p);
     
-    while (i < num_args)
+    va_start(argus, format);
+    count = 0;
+    while (*format != '\0')
     {
-        if (p[i] == 'd')
-        {
-            int x = va_arg(argus, int);
-            printf("%d\n", x);
-        }
-        else if (p[i] == 'f')
-        {
-            double x = va_arg(argus, double);
-            printf("%f\n", x);
-        }
-        i++;
+        if (*format == '%')
+            count += print_format(*(++format), argus);
+        else
+            count += write(1, &format, 1);
+        ++format;
     }
     va_end(argus);
-
-    return (0);
+    return (count);
 }
 
 int main(void)
 {
-    ft_printf("fdfd", 3.5, 5, 4.23, 100);
-    printf("%f%d%f%d", 3.5, 5, 4.23, 100);
+    ft_printf("%d", 5);
+    printf("%d", 5);
     return (0);
 }
