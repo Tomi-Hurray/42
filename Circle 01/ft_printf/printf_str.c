@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 01:01:10 by tomi              #+#    #+#             */
-/*   Updated: 2025/10/21 19:20:52 by tkorytko         ###   ########.fr       */
+/*   Created: 2025/10/21 16:28:19 by tkorytko          #+#    #+#             */
+/*   Updated: 2025/10/21 20:09:05 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	printf_str(char *str)
 {
-	int		count;
-	va_list	argus;
+	int	count;
 
-	va_start(argus, format);
+	if (!str)
+		return (write(1, "(nil)", 5));
 	count = 0;
-	while (*format != '\0')
+	while (*str != '\0')
 	{
-		if (*format == '%')
-			count += print_format(*(++format), argus);
-		else
-			count += write(1, format, 1);
-		++format;
+		printf_char((int)*str);
+		++count;
+		++str;
 	}
-	va_end(argus);
 	return (count);
 }
-
-//int	main(void)
-//{
-//	int		a;
-//	void	*ptr;
-//	a =42;
-//	ptr = NULL;
-//	printf("printf: %p\n", ptr);
-//	ft_printf("my ft_printf: %p", ptr);
-//	return (0);
-//}

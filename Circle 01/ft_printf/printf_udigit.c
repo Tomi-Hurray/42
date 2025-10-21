@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf_udigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 01:01:10 by tomi              #+#    #+#             */
-/*   Updated: 2025/10/21 19:20:52 by tkorytko         ###   ########.fr       */
+/*   Created: 2025/10/21 17:24:38 by tkorytko          #+#    #+#             */
+/*   Updated: 2025/10/21 19:29:23 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	printf_udigit(long n, int base)
 {
 	int		count;
-	va_list	argus;
+	char	*symbols;
 
-	va_start(argus, format);
 	count = 0;
-	while (*format != '\0')
+	symbols = "0123456789abcdef";
+	if (n < 0)
+		return (printf_udigit(-n, base) + 1);
+	else if (n < base)
+		return (printf_char(symbols[n]));
+	else
 	{
-		if (*format == '%')
-			count += print_format(*(++format), argus);
-		else
-			count += write(1, format, 1);
-		++format;
+		count = printf_udigit(n / base, base);
+		return (count + printf_udigit(n % base, base));
 	}
-	va_end(argus);
 	return (count);
 }
-
-//int	main(void)
-//{
-//	int		a;
-//	void	*ptr;
-//	a =42;
-//	ptr = NULL;
-//	printf("printf: %p\n", ptr);
-//	ft_printf("my ft_printf: %p", ptr);
-//	return (0);
-//}

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   printf_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 00:25:48 by tomi              #+#    #+#             */
-/*   Updated: 2025/10/21 00:30:00 by tomi             ###   ########.fr       */
+/*   Updated: 2025/10/21 19:20:43 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int printf_char(int c)
+int	printf_char(int c)
 {
-        write(1, &c, 1);
+	return (write(1, &c, 1));
 }
