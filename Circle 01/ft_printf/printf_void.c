@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf_void.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:30:13 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/10/21 19:37:19 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/10/22 00:49:45 by tomi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int	printf_void(void *ptr, int base)
 	count = 0;
 	uptr = (unsigned long)ptr;
 	count += write(1, "0x", 2);
-	count += printf_digit(uptr, base);
+	if (uptr >= ULONG_MAX)
+		count += printf_udigit_pointer(ULONG_MAX, base);
+	else
+		count += printf_udigit_pointer(uptr, base);
 	return (count);
 }

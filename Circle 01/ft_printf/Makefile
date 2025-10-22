@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+         #
+#    By: tomi <tomi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/18 00:56:20 by tomi              #+#    #+#              #
-#    Updated: 2025/10/21 18:40:18 by tkorytko         ###   ########.fr        #
+#    Updated: 2025/10/22 00:28:49 by tomi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME = libftprintf.a
 #source
 SRC = ft_printf.c print_format.c printf_char.c \
 		printf_digit.c printf_digitup.c printf_str.c \
-		printf_udigit.c printf_void.c
+		printf_udigit.c printf_void.c printf_udigit_pointer.c \
 
 
 #lib object files
