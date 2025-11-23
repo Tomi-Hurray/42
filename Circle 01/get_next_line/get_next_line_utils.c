@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utilis.c                             :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:07:38 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/11/22 16:47:40 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:28:13 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > ft_strlen(s + start))
 		len = ft_strlen(s + start);
-	subs = ft_calloc(len + 1, sizeof(char));
+	subs = malloc(len + 1);
 	if (!subs)
 		return (NULL);
 	i = 0;

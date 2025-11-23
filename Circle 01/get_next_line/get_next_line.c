@@ -6,13 +6,13 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:03:59 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/11/22 19:54:24 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:38:47 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*fill_buffer(int fd, char *left_c, char *buffer)
+char	*fill_buffer(int fd, char *left_c, char *buffer)
 {
 	int			n;
 	char		*temp;
@@ -20,7 +20,7 @@ static char	*fill_buffer(int fd, char *left_c, char *buffer)
 	n = 1;
 	while (n > 0)
 	{
-		n = read(fd, buffer, 5);
+		n = read(fd, buffer, BUFFER_SIZE);
 		if (n == -1)
 		{
 			free(left_c);
@@ -44,7 +44,7 @@ static char	*fill_buffer(int fd, char *left_c, char *buffer)
 char	*set_line(char	*line_buffer)
 {
 	size_t		i;
-	char	*line;
+	char		*line;
 
 	i = 0;
 	while (line_buffer[i] != '\n' && line_buffer[i] != '\0')
@@ -60,4 +60,37 @@ char	*set_line(char	*line_buffer)
 	}
 	line_buffer[i + 1] = 0;
 	return (line);
+}
+
+char	*get_next_line(int fd)
+{
+	char			*buffer;
+	char			*line;
+	static char		*left_c;
+
+	if (fd == 0 || fd < 0 || fd < 1024)
+	{
+		free(buffer);
+		free(left_c);
+		free(line);
+		return (0);
+	}
+	left_c = fill_buffer(fd, left_c, buffer);
+	line = set_line(left_c);
+	return (line);
+}
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t			i;
+	unsigned char	*dst;
+
+	dst = dest;
+	i = 0;
+	while (i < n)
+	{
+		dst[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dst);
 }
