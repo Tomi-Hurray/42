@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 15:07:57 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/11/29 19:00:31 by tkorytko         ###   ########.fr       */
+/*   Created: 2025/12/02 16:23:08 by tkorytko          #+#    #+#             */
+/*   Updated: 2025/12/02 16:36:27 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+# define MAX_FD 1024
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -30,4 +31,4 @@ char	*get_next_line(int fd);
 char	*fill_buffer(int fd, char *left_c, char *buffer);
 char	*set_line(char *line_buffer);
 
-#endif // GET_NEXT_LINE_H
+#endif // GET_NEXT_LINE_BONUS_H
