@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:03:59 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/12/02 16:09:18 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/12/11 16:53:33 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,21 @@ char	*fill_buffer(int fd, char *left_c, char *buffer)
 char	*set_line(char	*line_buffer)
 {
 	size_t		i;
-	char		*line;
+	char		*left_c;
 
 	i = 0;
 	while (line_buffer[i] != '\n' && line_buffer[i] != '\0')
 		i++;
 	if (line_buffer[i] == 0 || line_buffer[1] == 0)
 		return (NULL);
-	line = ft_substr(line_buffer, i + 1, ft_strlen(line_buffer) - i);
-	if (*line == 0)
+	left_c = ft_substr(line_buffer, i + 1, ft_strlen(line_buffer) - i);
+	if (*left_c == 0)
 	{
-		free(line);
-		line = NULL;
+		free(left_c);
+		left_c = NULL;
 	}
 	line_buffer[i + 1] = 0;
-	return (line);
+	return (left_c);
 }
 
 char	*get_next_line(int fd)
@@ -68,7 +68,7 @@ char	*get_next_line(int fd)
 	static char		*left_c;
 
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		free(buffer);
 		free(left_c);
@@ -76,6 +76,8 @@ char	*get_next_line(int fd)
 		buffer = NULL;
 		return (0);
 	}
+	if (!buffer)
+		return (NULL);
 	line = fill_buffer(fd, left_c, buffer);
 	free(buffer);
 	if (!line)
@@ -91,10 +93,16 @@ void	fill_joint(char *joint, char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	while (s1[j])
-		joint[i++] = s1[j++];
+	if (s1)
+	{
+		while (s1[j])
+			joint[i++] = s1[j++];
+	}
 	j = 0;
-	while (s2[j])
-		joint[i++] = s2[j++];
+	if (s2)
+	{
+		while (s2[j])
+			joint[i++] = s2[j++];
+	}
 	joint[i] = '\0';
 }

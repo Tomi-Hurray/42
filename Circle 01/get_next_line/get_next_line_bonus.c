@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:23:38 by tkorytko          #+#    #+#             */
-/*   Updated: 2025/12/02 16:38:29 by tkorytko         ###   ########.fr       */
+/*   Updated: 2025/12/11 16:22:01 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,21 @@ char	*get_next_line(int fd)
 	char			*line;
 	static char		*left_c[MAX_FD];
 
-	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
-		free(buffer);
 		free(left_c[fd]);
 		left_c[fd] = NULL;
 		buffer = NULL;
-		return (0);
+		return (NULL);
 	}
+	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	line = fill_buffer(fd, left_c[fd], buffer);
 	free(buffer);
 	if (!line)
+	{
+		free(line);
 		return (NULL);
+	}
 	left_c[fd] = set_line(line);
 	return (line);
 }
