@@ -6,18 +6,18 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 16:24:13 by tkorytko          #+#    #+#             */
-/*   Updated: 2026/01/10 16:09:06 by tkorytko         ###   ########.fr       */
+/*   Updated: 2026/01/25 18:39:24 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	long		i;
-	long		m;
-	long		res_value;
-	char		*str;
+	long	i;
+	long	m;
+	long	res_value;
+	char	*str;
 
 	str = (char *)nptr;
 	m = 1;
