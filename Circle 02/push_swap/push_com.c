@@ -1,26 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   push_com.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 15:03:24 by tkorytko          #+#    #+#             */
-/*   Updated: 2026/01/30 16:34:00 by tkorytko         ###   ########.fr       */
+/*   Created: 2026/01/30 16:35:57 by tkorytko          #+#    #+#             */
+/*   Updated: 2026/01/30 16:35:58 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	sort_three(t_stack_node **a)
-{
-	t_stack_node	**biggest_node;
-	
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next = biggest_node)
-		rra(a, false);
-	if ((*a)->number > (*a)->next->number)
-		sa(a, false);
-}

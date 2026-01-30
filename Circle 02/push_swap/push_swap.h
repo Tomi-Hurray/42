@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 16:00:50 by tkorytko          #+#    #+#             */
-/*   Updated: 2026/01/25 15:30:18 by tkorytko         ###   ########.fr       */
+/*   Updated: 2026/01/30 16:48:57 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ typedef struct s_struct_node
 }							t_stack_node;
 
 // duzo funkcji.
-
+long						ft_atol(const char *nptr);
 // ERROR HANDLING
 int							error_syntax(char *str_n);
 int							error_dup(t_stack_node *a, int n);
 void						free_stack(t_stack_node **stack);
-void						free_error(t_stack_node **a);
+void						free_errors(t_stack_node **a);
 // STACK INIT
 void						init_stack_a(t_stack_node **a, char **argv);
 char						**split(char *s, char c);

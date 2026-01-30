@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 15:03:24 by tkorytko          #+#    #+#             */
-/*   Updated: 2026/01/30 16:34:00 by tkorytko         ###   ########.fr       */
+/*   Created: 2025/12/07 16:24:13 by tkorytko          #+#    #+#             */
+/*   Updated: 2026/01/25 18:39:24 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack_node **a)
+long	ft_atol(const char *nptr)
 {
-	t_stack_node	**biggest_node;
-	
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next = biggest_node)
-		rra(a, false);
-	if ((*a)->number > (*a)->next->number)
-		sa(a, false);
+	long	i;
+	long	m;
+	long	res_value;
+	char	*str;
+
+	str = (char *)nptr;
+	m = 1;
+	i = 0;
+	res_value = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
+		i++;
+	if (str[i] == '+' && str[i + 1] != '-')
+		i++;
+	if (str[i] == '-')
+	{
+		m = -m;
+		i++;
+	}
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		res_value = res_value * 10 + (str[i] - '0');
+		i++;
+	}
+	return (res_value * m);
 }
