@@ -6,7 +6,7 @@
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 16:00:50 by tkorytko          #+#    #+#             */
-/*   Updated: 2026/01/30 16:48:57 by tkorytko         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:56:02 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ typedef struct s_struct_node
 	struct s_struct_node	*prev;
 }							t_stack_node;
 
-// duzo funkcji.
+// duzo funkcji. X
 long						ft_atol(const char *nptr);
-// ERROR HANDLING
+// ERROR HANDLING X
 int							error_syntax(char *str_n);
 int							error_dup(t_stack_node *a, int n);
 void						free_stack(t_stack_node **stack);
 void						free_errors(t_stack_node **a);
-// STACK INIT
+// STACK INIT X
 void						init_stack_a(t_stack_node **a, char **argv);
 char						**split(char *s, char c);
 // NODES INIT
@@ -65,7 +65,7 @@ void						rrb(t_stack_node **b, bool check);
 void						rrr(t_stack_node **a, t_stack_node **b, bool check);
 void						pa(t_stack_node **a, t_stack_node **b, bool check);
 void						pb(t_stack_node **b, t_stack_node **a, bool check);
-// SORTING
+// SORTING 1/2
 void						sort_small(t_stack_node **a);
 void						sort_stacks(t_stack_node **a, t_stack_node **b);
 
