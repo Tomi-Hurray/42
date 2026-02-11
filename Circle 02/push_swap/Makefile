@@ -11,47 +11,73 @@
 # **************************************************************************** #
 
 #compilator
-CC = cc
+CC = gcc
 
 #flags
 CFLAGS = -Wall -Wextra -Werror
+
+#directories
+PRINTF_DIR = ./ft_printf
+PRINTF = $(PRINTF_DIR)/ft_printf.a
+#linkers
+LDFLAGS = -L $(PRINTF_DIR) -lft
+# Wykrywanie systemu operacyjnego
+ifeq ($(OS),Windows_NT)
+    RM = del /f /q
+    # Na Windowsie plik wykonywalny często ma końcówkę .exe
+    TARGET = $(NAME).exe
+else
+    RM = rm -f
+    TARGET = $(NAME)
+endif
 
 #lib name
 NAME = push_swap
 
 #source
-SRC = push_swap.c , ft_atoi.c , input.c
+SRC = push_swap.c \
+	a_to_b.c b_to_a.c errors.c \
+	ft_atol.c push_com.c reverse_r.c \
+	rotate.c sort_stacks.c sort_three.c \
+	split.c stack_init.c stack_utils.c \
+	swap_com.c
 
+
+#default rule
+all : $(PRINTF) $(TARGET) 
 
 #lib object files
 OBJ = $(SRC:.c=.o)
 
-#testfile
-#TESTSRC = ft_printf.c
-#TESTOBJ = $(TESTSRC:.c=.o)
-#TESTBIN = test
+#PRINTF:
+$(PRINTF):
+	$(MAKE) -C $(PRINTF_DIR)
 
-#default rule
-all : $(NAME) 
+#testfile
+TESTSRC = push_swap.c
+TESTOBJ = $(TESTSRC:.c=.o)
+TESTBIN = test
 
 #building lib
-$(NAME): $(OBJ)
-	rm -f $(NAME)
-	ar rcs $(NAME) $(OBJ)
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) $(PRINTF) -o $(TARGET)
 
 #building files with .o ext
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-#test: $(NAME) $(TESTOBJ)
-#	$(CC) $(CFLAGS) -o $(TESTBIN) $(TESTOBJ) $(NAME)
+test: $(NAME) $(TESTOBJ)
+	$(CC) $(CFLAGS) -o $(TESTBIN) $(TESTOBJ) $(NAME)
 	
 #cleanup of .o files
 clean:
-	rm -f $(OBJ) 
+	$(RM) $(OBJ)
+	$(MAKE) -C $(PRINTF_DIR) clean
+
 #cleanup of everyting + (library and programme)
 fclean: clean
-	rm -f $(NAME) 
+	$(RM) $(TARGET)
+	$(MAKE) -C $(PRINTF_DIR) fclean
 #full cleanup and compilation
 re: fclean all
 

@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   printf_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 15:03:24 by tkorytko          #+#    #+#             */
-/*   Updated: 2026/01/30 16:34:00 by tkorytko         ###   ########.fr       */
+/*   Created: 2025/10/21 00:25:48 by tomi              #+#    #+#             */
+/*   Updated: 2025/10/21 19:20:43 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	sort_three(t_stack_node **a)
+int	printf_char(int c)
 {
-	t_stack_node	*biggest_node;
-	
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next == biggest_node)
-		rra(a, false);
-	if ((*a)->number > (*a)->next->number)
-		sa(a, false);
+	return (write(1, &c, 1));
 }

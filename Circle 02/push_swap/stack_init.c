@@ -22,8 +22,8 @@ static void	append_node(t_stack_node **stack, int n)
 	node = malloc(sizeof(t_stack_node));
 	if (!node)
 		return ;
-	node -> next;
-	node -> number = n;
+	node->next = NULL;
+	node->number = n;
 	node->cheapest = 0;
 	if (!stack)
 	{
@@ -38,7 +38,7 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_node **a, char *argv)
+void	init_stack_a(t_stack_node **a, char **argv)
 {
 	long	n;
 	int		i;

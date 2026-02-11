@@ -13,8 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "/nfs/homes/tkorytko/core/Circle 0/libft/libft.h"
-# include "/nfs/homes/tkorytko/core/Circle 01/ft_printf/ft_printf.h"
+# include "C:\Users\User\Desktop\42\42\Circle 00\libft\libft.h"
 # include <limits.h>
 # include <stdarg.h>
 # include <stdbool.h>
@@ -46,6 +45,12 @@ void						free_errors(t_stack_node **a);
 void						init_stack_a(t_stack_node **a, char **argv);
 char						**split(char *s, char c);
 // NODES INIT
+void						init_nodes_a(t_stack_node *a, t_stack_node *b);
+void						init_nodes_b(t_stack_node *a, t_stack_node *b);
+void						current_index(t_stack_node *stack);
+void						set_cheapest(t_stack_node *stack);
+t_stack_node				*get_cheapest(t_stack_node *stack);
+void						prep_for_push(t_stack_node **s, t_stack_node *n, char c);
 
 // UTILS FOR STACKS
 int							stack_len(t_stack_node *stack);
@@ -66,7 +71,7 @@ void						rrr(t_stack_node **a, t_stack_node **b, bool check);
 void						pa(t_stack_node **a, t_stack_node **b, bool check);
 void						pb(t_stack_node **b, t_stack_node **a, bool check);
 // SORTING 1/2
-void						sort_small(t_stack_node **a);
+void						sort_three(t_stack_node **a);
 void						sort_stacks(t_stack_node **a, t_stack_node **b);
 
-#endif // push_swap_h
+#endif // push_swap

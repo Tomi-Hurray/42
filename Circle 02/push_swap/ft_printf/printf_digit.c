@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   printf_digit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkorytko <tkorytko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/25 15:03:24 by tkorytko          #+#    #+#             */
-/*   Updated: 2026/01/30 16:34:00 by tkorytko         ###   ########.fr       */
+/*   Created: 2025/10/21 00:19:47 by tomi              #+#    #+#             */
+/*   Updated: 2025/10/21 19:28:10 by tkorytko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void	sort_three(t_stack_node **a)
+int	printf_digit(long n, int base)
 {
-	t_stack_node	*biggest_node;
-	
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, false);
-	else if ((*a)->next == biggest_node)
-		rra(a, false);
-	if ((*a)->number > (*a)->next->number)
-		sa(a, false);
+	int		count;
+	char	*symbols;
+
+	count = 0;
+	symbols = "0123456789abcdef";
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		return (printf_digit(-n, base) + 1);
+	}
+	else if (n < base)
+		return (printf_char(symbols[n]));
+	else
+	{
+		count = printf_digit(n / base, base);
+		return (count + printf_digit(n % base, base));
+	}
+	return (count);
 }

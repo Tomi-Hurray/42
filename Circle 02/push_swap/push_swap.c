@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 		if (stack_len(a) == 2)
 			sa(&a, false);
 		else if (stack_len(a) == 3)
-			sort_small(&a);
+			sort_three(&a);
 		else
 			sort_stacks(&a, &b);
 	}
